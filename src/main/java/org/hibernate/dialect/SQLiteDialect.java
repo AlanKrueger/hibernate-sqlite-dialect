@@ -19,7 +19,15 @@ import org.hibernate.dialect.function.SQLFunction;
 import org.hibernate.dialect.function.SQLFunctionTemplate;
 import org.hibernate.dialect.function.StandardSQLFunction;
 import org.hibernate.dialect.function.VarArgsSQLFunction;
-import org.hibernate.exception.*;
+import org.hibernate.exception.ConstraintViolationException;
+import org.hibernate.exception.DataException;
+import org.hibernate.exception.GenericJDBCException;
+import org.hibernate.exception.JDBCConnectionException;
+import org.hibernate.exception.LockAcquisitionException;
+import org.hibernate.exception.spi.SQLExceptionConverter;
+import org.hibernate.exception.spi.TemplatedViolatedConstraintNameExtracter;
+import org.hibernate.exception.spi.ViolatedConstraintNameExtracter;
+import org.hibernate.internal.util.JdbcExceptionHelper;
 import org.hibernate.type.StandardBasicTypes;
 
 public class SQLiteDialect extends Dialect {
@@ -189,7 +197,7 @@ public class SQLiteDialect extends Dialect {
     return new SQLExceptionConverter() {
       @Override
       public JDBCException convert(SQLException sqlException, String message, String sql) {
-        final int errorCode = JDBCExceptionHelper.extractErrorCode(sqlException);
+        final int errorCode = JdbcExceptionHelper.extractErrorCode(sqlException);
         if (errorCode == SQLITE_CONSTRAINT) {
           final String constraintName = EXTRACTER.extractConstraintName(sqlException);
           return new ConstraintViolationException(message, sqlException, sql, constraintName);
