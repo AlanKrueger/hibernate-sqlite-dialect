@@ -1,0 +1,20 @@
+apply plugin: 'java'
+apply plugin: 'maven'
+apply plugin: 'eclipse'
+
+group = 'com.trigonic'
+version = '4.3.7.Final'
+
+description = """SQLite dialect for Hibernate"""
+
+sourceCompatibility = 1.6
+targetCompatibility = 1.6
+
+repositories {
+  maven { url "http://repo.maven.apache.org/maven2" }
+}
+
+dependencies {
+  compile 'org.hibernate:hibernate-core:4.3.7.Final'
+}
+
