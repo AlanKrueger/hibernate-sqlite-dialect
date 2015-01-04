@@ -2,13 +2,13 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>org.hibernate.dialect</groupId>
-  <artifactId>sqlite-dialect</artifactId>
+  <groupId>com.trigonic</groupId>
+  <artifactId>hibernate-sqlite-dialect</artifactId>
   <packaging>jar</packaging>
-  <version>0.1.0</version>
+  <version>4.3.7.Final</version>
   <name>SQLite dialect for Hibernate</name>
   <description>SQLite dialect for Hibernate</description>
-  <url>https://github.com/gwenn/sqlite-dialect</url>
+  <url>https://github.com/AlanKrueger/sqlite-dialect</url>
 
   <licenses>
     <license>
@@ -20,14 +20,14 @@
 
   <issueManagement>
     <system>github</system>
-    <url>https://github.com/gwenn/sqlite-dialect/issues</url>
+    <url>https://github.com/AlanKrueger/sqlite-dialect/issues</url>
   </issueManagement>
 
   <scm>
-    <connection>scm:git:https://github.com/gwenn/sqlite-dialect.git</connection>
-    <developerConnection>scm:git:git@github.com:gwenn/sqlite-dialect.git</developerConnection>
+    <connection>scm:git:https://github.com/AlanKrueger/sqlite-dialect.git</connection>
+    <developerConnection>scm:git:git@github.com:AlanKrueger/sqlite-dialect.git</developerConnection>
     <tag>HEAD</tag>
-    <url>https://github.com/gwenn/sqlite-dialect</url>
+    <url>https://github.com/AlanKrueger/sqlite-dialect</url>
   </scm>
 
   <properties>
@@ -39,7 +39,7 @@
     <dependency>
       <groupId>org.hibernate</groupId>
       <artifactId>hibernate-core</artifactId>
-      <version>3.6.8.Final</version>
+      <version>4.3.7.Final</version>
     </dependency>
   </dependencies>
   <build>
